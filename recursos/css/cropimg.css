@@ -1,0 +1,68 @@
+.ci-main {
+  position:relative;
+  max-width:100%;
+  margin:0 auto;
+}
+.ci-main .ci-image-wrapper {
+  background: transparent none repeat scroll 0 0;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+  margin: 0 0 40px;
+  overflow: hidden;
+  position: relative;
+}
+.ci-main .ci-image-wrapper:hover {cursor:move;}
+.ci-main .ci-image-wrapper img {position:absolute;z-index:1;top:0px;left:0px;display:block !important;max-width:none !important;}
+.ci-main .ci-tool .ci-fixing-position {display:block;width:17px;height:17px;background-color:#000;position:absolute;z-index:2;background-image:url('../images/buttons.png');background-repeat:no-repeat;}
+.ci-main .ci-tool .ci-fixing-position:hover {cursor:pointer;}
+.ci-main .ci-tool .ci-fixing-position.ci-fptl {bottom:33px;right:39px;background-position:0px -21px;}
+.ci-main .ci-tool .ci-fixing-position.ci-fptc {bottom:33px;right:22px;background-position:-17px -21px;}
+.ci-main .ci-tool .ci-fixing-position.ci-fptr {bottom:33px;right:5px;background-position:-34px -21px;}
+.ci-main .ci-tool .ci-fixing-position.ci-fpcl {bottom:16px;right:39px;background-position:0px -38px;}
+.ci-main .ci-tool .ci-fixing-position.ci-fpcc {bottom:16px;right:22px;background-position:-17px -38px;}
+.ci-main .ci-tool .ci-fixing-position.ci-fpcr {bottom:16px;right:5px;background-position:-34px -38px;}
+.ci-main .ci-tool .ci-fixing-position.ci-fpbl {bottom:0px;right:39px;background-position:0px -55px;}
+.ci-main .ci-tool .ci-fixing-position.ci-fpbc {bottom:0px;right:22px;background-position:-17px -55px;}
+.ci-main .ci-tool .ci-fixing-position.ci-fpbr {bottom:0px;right:5px;background-position:-34px -55px;}
+.ci-main .ci-tool {
+  display: table;
+  height: 50px;
+  max-width: 240px;
+  width: 100%;
+  position: relative;
+  margin: 0 0 20px 0;
+}
+.ci-main .ci-tool.ci-zooming {
+  float: left;
+}
+.ci-main .ci-tool.ci-moving {
+  float: right;
+}
+.ci-main .ci-tool .ci-button {
+  background: #000 none repeat scroll 0 0;
+  color: #fff;
+  display: inline-block;
+  height: 50px;
+  margin: 0 10px 0 0;
+  text-align: center;
+  width: 50px;
+}
+.ci-main .ci-tool .ci-button i{
+  font-size: 30px;
+  line-height: 50px;
+}
+.ci-main .ci-tool .ci-button:hover {cursor:pointer;}
+.ci-main .ci-tool .ci-fixing-size {
+  background: #000 none repeat scroll 0 0;
+  color: #fff;
+  display: inline-block;
+  height: 50px;
+  margin: 0 10px 0 0;
+  text-align: center;
+  width: 50px;
+}
+.ci-main .ci-tool .ci-fixing-size i{
+  font-size: 30px;
+  line-height: 50px;
+}
+.ci-main .ci-tool .ci-fixing-size:hover {cursor:pointer;}
+.ci-image-loader {display:block;position:absolute;left:-9999px;top:-9999px;z-index:0;}

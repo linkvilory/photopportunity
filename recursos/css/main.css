@@ -1,0 +1,134 @@
+/*
+====
+Button
+====
+*/
+.button {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  line-height: 1.2;
+  font-size: 1em;
+  border-radius: 5px;
+  background: transparent;
+  border: 2px solid #444;
+  color: #444;
+  text-align: center;
+  margin: 10px auto;
+  text-decoration: none;
+  transition: 0.25s all ease-in-out;
+  padding: 15px 0;
+  cursor: pointer; }
+  .button:hover, .button:active, .button:focus, .button.active {
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid #fff;
+    background: #444; }
+
+/*
+ ====
+ Nav
+ ====
+*/
+nav {
+  height: 50px;
+  margin: 0 0 10px;
+  width: 100%; }
+  nav span {
+    display: inline-block;
+    float: right;
+    margin: 5px 10px 0 0; }
+    nav span i.fa {
+      color: #444;
+      cursor: pointer;
+      font-size: 40px; }
+
+/*
+ ====
+ Top Menu
+ ====
+*/
+.menu {
+  background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99; }
+  .menu .close-menu {
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    margin: 40px 0;
+    text-align: center; }
+    .menu .close-menu i {
+      font-size: 40px; }
+  .menu .main-menu {
+    float: left;
+    height: 50%;
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 100%; }
+    .menu .main-menu li i {
+      color: #fff;
+      display: inline-block;
+      font-size: 2em;
+      line-height: 1; }
+    .menu .main-menu li a {
+      color: #fff;
+      font-size: 2em;
+      letter-spacing: 2px;
+      margin: 0 10px;
+      text-align: left; }
+
+/*
+ ====
+ Menu Backs
+ ====
+*/
+.backs {
+  background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0;
+  height: 100vh;
+  right: 0;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 40%; }
+  .backs .close-menu {
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    margin: 40px 0;
+    text-align: center; }
+    .backs .close-menu i {
+      font-size: 40px; }
+  .backs .backs-scroll {
+    display: block;
+    height: calc(100% - 120px);
+    overflow-y: scroll;
+    width: 100%; }
+    .backs .backs-scroll .back {
+      display: table;
+      margin: 0 0 20px;
+      width: 100%; }
+      .backs .backs-scroll .back img {
+        display: block;
+        margin: auto;
+        width: 80%;
+        cursor: pointer; }
+
+/*
+ ====
+ Containers
+ ====
+*/
+/* === IMG Container === */
+.img-container .img-container img {
+  height: 100%;
+  max-width: 600px;
+  width: 100%; }
+
+/*# sourceMappingURL=main.css.map */

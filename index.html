@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+
+	<!-- Meta -->
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Css -->
+	<link type="text/css" rel="stylesheet" href="/recursos/css/font-awesome.css"/>
+	<link type="text/css" rel="stylesheet" href="/recursos/css/bootstrap.css"/>
+	<link type="text/css" rel="stylesheet" href="/recursos/css/main.css"/>
+	<link type="text/css" rel="stylesheet" href="/recursos/css/animate.css"/>
+	<link type="text/css" rel="stylesheet" href="/recursos/css/cropimg.css"/>
+
+	<!-- Icons -->
+
+	<!-- Title Web Site -->
+	<title>App Photo</title>
+	</head>
+	<body>
+
+	<!-- Boostrap Template -->
+
+	<nav>
+		<span>
+			<i class="fa fa-bars"></i>
+		</span><!-- Menu icon -->
+	</nav><!-- Menu Navigation -->
+
+	<section id="menu" class="menu hidden">
+		<span class="close-menu">
+			<i class="fa fa-times"></i>
+		</span>
+		<ul class="main-menu">
+			<li><i class="fa fa-picture-o"></i> <a href="#">Fondos</a></li>
+			<li><i class="fa fa-square"></i> <a href="#">Marcos</a></li>
+		</ul>
+	</section>
+
+	<section id="backs" class="backs hidden">
+		<span class="close-menu">
+			<i class="fa fa-times"></i>
+		</span>
+		<div class="backs-scroll">
+			<div class="back">
+				<img class="" data-src-text="" src="/recursos/images/backs/back-blue.png"/>
+			</div>
+			<div class="back">
+				<img class="" data-src-text="" src="/recursos/images/backs/back-red.png"/>
+			</div>
+			<div class="back">
+				<img class="" data-src-text="" src="/recursos/images/backs/back-pink.png"/>
+			</div>
+		</div>
+	</section>
+
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col-md-12 col-sm-12 col-xs-12">
+
+				<div class="col-md-6 col-md-offset-3">
+
+					<input id="pick" class="hidden" type="file" accept="image/*" name="pick" />
+					<input id="camera" class="hidden" type="file" accept="image/*;capture=camera" name="camera" />
+
+
+					<a class="button pick">Tomar foto</a>
+					<a class="button camera">Escoger foto</a>
+
+					<div class="clearfix"></div><!-- Clearfix -->
+
+					<div id="img-container" class="img-container">
+						<img id="img-camera" class="img-camera" src="" alt="" title="" />
+					</div><!-- IMG Container -->
+
+					<div id="canvas-container" class="canvas-container hidden">
+						<canvas id="canvas-camera" class="canvas-camera" width="600" height="450"></canvas>
+					</div><!-- CANVAS Container -->
+
+					<div class="clearfix"></div><!-- Clearfix -->
+
+					<a class="button hidden">Generar Imagen</a>
+
+				</div><!-- Col -->
+
+			</div><!-- Col -->
+
+		</div><!-- Row -->
+
+	</div><!-- Container -->
+
+	<!-- End Boostrap Template -->
+
+	<!-- Javascript Init -->
+	<script type="text/javascript" src="/recursos/js/jquery-1.11.2.js"></script>
+	<script type="text/javascript" src="/recursos/js/bootstrap.js"></script>
+	<script type="text/javascript" src="/recursos/js/cropimg.jquery.js"></script>
+	<script type="text/javascript" src="/recursos/js/main.js"></script>
+	</body>
+</html>
