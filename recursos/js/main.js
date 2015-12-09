@@ -3,9 +3,6 @@
  Variable Globales
  ====
 */
-var canvasPhoto;
-var canvasBack;
-var canvasFrame;
 var MAX_WIDTH = 650;
 var MAX_HEIGHT = 450;
 
@@ -19,14 +16,11 @@ function readImage() {
    ===
   */
 
-  var idCanvas = "canvas-camera";
   var idImg = "img-camera";
   console.log("Funcion para leer la imagen seleccionada o tomada por el usuario");
     if ( this.files && this.files[0] ) {
 
       console.log("Se está leyendo el archivo");
-      canvasPhoto = document.getElementById(idCanvas);
-      var context = canvasPhoto.getContext('2d');
       var FR = new FileReader();
       FR.onload = function(e) {
         var image = new Image();
@@ -37,7 +31,6 @@ function readImage() {
             var center = (MAX_WIDTH / 2) - (image.width / 2);
       		}
           console.log("width: " + image.width + " Height: " + image.height + " Center: " + center);
-          context.drawImage(image, center, 0, image.width, image.height);
           var imgPhoto = document.getElementById(idImg);
           imgPhoto.src = image.src;
 
@@ -74,49 +67,54 @@ var setManipulation = function(){
   $(".tool-bar-images").removeClass("hidden");
 };
 
-var setCanvasBack = function(source){
-	canvasBack = document.getElementById('canvas-back'),
-	context = canvasBack.getContext('2d');
+var sendImageToServer = function(){
 
-	context.clearRect(0, 0, canvasBack.width, canvasBack.height);
-
-	base_image = new Image();
-	base_image.onload = function(){
-		context.drawImage(base_image, 0, 0, 600, 450);
-	}
-	base_image.src = source;
-};
-
-var setCanvasFrame = function(source){
-	canvasFrame = document.getElementById('canvas-frame'),
-	context = canvasFrame.getContext('2d');
-
-	context.clearRect(0, 0, canvasFrame.width, canvasFrame.height);
-
-	base_image = new Image();
-	base_image.onload = function(){
-		context.drawImage(base_image, 0, 0, 600, 450);
-	}
-	base_image.src = source;
-};
-
-var sendImageToServer = function(e){
-
-  e.preventDefault();
-  var canvasFinal = document.getElementById('final'),
+  var canvasFinal = document.getElementById('canvas-preview'),
 	context = canvasFinal.getContext('2d');
 
+  var imgBack = document.getElementById("img-back");
+  var imgCamera = document.getElementById("img-camera");
+  var imgFrame = document.getElementById("img-frame");
   /*
    Obtener todos los parametros de la imagen para mandarla al canvas final */
 
-	context.drawImage(canvasBack, 0, 0, 600, 450);
-	context.drawImage(canvasFrame, 0, 0, 600, 450);
+  var str = $("#img-camera").attr("style");
+
+  str = str.replace(/width: /g, "");
+  str = str.replace(/height: /g, "");
+  str = str.replace(/max-/g, "");
+  str = str.replace(/min-/g, "");
+  str = str.replace(/top: /g, "");
+  str = str.replace(/left: /g, "");
+  str = str.replace(/ /g, "");
+  str = str.replace(/\t/g, "");
+  str = str.replace(/\n/g, "");
+
+  str = str.split("px;");
+
+  //console.log(str[0], str[1], str[6], str[7]);
+  var w, h, t, l;
+  if(str[0] == "" || str[0] == null){
+    w = 0;
+  }else{ w = str[0]; }
+  if(str[1] == "" || str[1] == null){
+    h = 0;
+  }else{ h = str[1]; }
+  if(str[6] == "" || str[6] == null){
+    t = 0;
+  }else{ t = str[6]; }
+  if(str[7] == "" || str[7] == null){
+    l = 0;
+  }else{ l = str[7]; }
+	context.drawImage(imgBack, 0, 0, 600, 450);
+  context.drawImage(imgCamera, l, t, w, h);
+	context.drawImage(imgFrame, 0, 0, 600, 450);
 
 	var dataURL = canvasFinal.toDataURL();
 
 	$.ajax({
 		type: "POST",
-		url: "php/saveImage.php",
+		url: "/recursos/php/saveImage.php",
 		data: {
 			imgBase64: dataURL
 		}
@@ -223,7 +221,10 @@ $(document).ready(function(){
      Click para mandar los resultados del preview
      ====
     */
-    console.log($("#img-camera").attr("style"));
+
+    /*
+      Se genera un canvas final donde estará toda la información que el usuario ha realizado */
+    sendImageToServer();
   });
 
   /*
@@ -242,7 +243,6 @@ $(document).ready(function(){
   $("#backs .back img").on("click", function(){
     var src = $(this).attr("src");
     $("#img-back").attr("src", src);
-    setCanvasBack(src);
   });
 
   /*
@@ -253,7 +253,6 @@ $(document).ready(function(){
   $("#frames .frame img").on("click", function(){
     var src = $(this).attr("src");
     $("#img-frame").attr("src", src);
-    setCanvasFrame(src);
   });
 
 });
