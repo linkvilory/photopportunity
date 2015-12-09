@@ -23,38 +23,58 @@
 
 	<!-- Boostrap Template -->
 
-	<nav>
+	<div class="inner-menu-collapsed hidden">
+	</div><!-- Div para menu colapsado y detectar interaccion del usuario -->
+
+	<nav class="hidden">
 		<span>
-			<i class="fa fa-bars"></i>
+			<i class="fa fa-bars"></i><!-- Menu -->
 		</span><!-- Menu icon -->
 	</nav><!-- Menu Navigation -->
 
 	<section id="menu" class="menu hidden">
 		<span class="close-menu">
-			<i class="fa fa-times"></i>
-		</span>
+			<i class="fa fa-times"></i><!-- Close -->
+		</span><!-- Close container -->
 		<ul class="main-menu">
-			<li><i class="fa fa-picture-o"></i> <a href="#">Fondos</a></li>
-			<li><i class="fa fa-square"></i> <a href="#">Marcos</a></li>
-		</ul>
-	</section>
+			<li class="fondos"><i class="fa fa-picture-o"></i> <a data-link-menu="backs" href="#">Fondos</a></li>
+			<li class="marcos"><i class="fa fa-square"></i> <a data-link-menu="frames" href="#">Marcos</a></li>
+		</ul><!-- List Menu -->
+	</section><!-- Menu -->
 
-	<section id="backs" class="backs hidden">
+	<section id="backs" class="backs">
 		<span class="close-menu">
-			<i class="fa fa-times"></i>
-		</span>
+			<i class="fa fa-times"></i><!-- Close -->
+		</span><!-- Close container -->
 		<div class="backs-scroll">
 			<div class="back">
-				<img class="" data-src-text="" src="/recursos/images/backs/back-blue.png"/>
-			</div>
+				<img class="" data-src-text="" src="/recursos/images/backs/back-cathedral.jpg"/><!-- Fondo -->
+			</div><!-- Contenedor de fondo -->
 			<div class="back">
-				<img class="" data-src-text="" src="/recursos/images/backs/back-red.png"/>
-			</div>
+				<img class="" data-src-text="" src="/recursos/images/backs/back-church.jpg"/><!-- Fondo -->
+			</div><!-- Contenedor de fondo -->
 			<div class="back">
-				<img class="" data-src-text="" src="/recursos/images/backs/back-pink.png"/>
-			</div>
-		</div>
-	</section>
+				<img class="" data-src-text="" src="/recursos/images/backs/back-piramide.jpg"/><!-- Fondo -->
+			</div><!-- Contenedor de fondo -->
+		</div><!-- Contenedor scrolleable para albergar a un sin fin de fondos -->
+	</section><!-- Seccion de imagenes de fondos -->
+
+	<section id="frames" class="frames">
+		<span class="close-menu">
+			<i class="fa fa-times"></i><!-- Close -->
+		</span><!-- Close container -->
+		<div class="frames-scroll">
+			<div class="frame">
+				<img class="" data-src-text="" src="/recursos/images/frames/frame-blue.png"/><!-- Marco -->
+			</div><!-- Contenedor de marco -->
+			<div class="frame">
+				<img class="" data-src-text="" src="/recursos/images/frames/frame-pink.png"/><!-- Marco -->
+			</div><!-- Contenedor de marco -->
+			<div class="frame">
+				<img class="" data-src-text="" src="/recursos/images/frames/frame-red.png"/><!-- Marco -->
+			</div><!-- Contenedor de marco -->
+		</div><!-- Contenedor scrolleable para albergar a un sin fin de marcos -->
+	</section><!-- Seccion de imagenes de marcos -->
 
 	<div class="container">
 
@@ -62,28 +82,39 @@
 
 			<div class="col-md-12 col-sm-12 col-xs-12">
 
-				<div class="col-md-6 col-md-offset-3">
+				<div class="col-md-10 col-md-offset-1">
 
-					<input id="pick" class="hidden" type="file" accept="image/*" name="pick" />
-					<input id="camera" class="hidden" type="file" accept="image/*;capture=camera" name="camera" />
+					<input id="pick" class="hidden" type="file" accept="image/*" name="pick" /><!-- Hidden input for file manipulation -->
+					<input id="camera" class="hidden" type="file" accept="image/*;capture=camera" name="camera" /><!-- Hidden input for file manipulation -->
 
-
-					<a class="button pick">Tomar foto</a>
-					<a class="button camera">Escoger foto</a>
+					<a class="button pick">Tomar foto</a><!-- Select Photo -->
+					<a class="button camera">Escoger foto</a><!-- Capture Photo -->
 
 					<div class="clearfix"></div><!-- Clearfix -->
 
-					<div id="img-container" class="img-container">
-						<img id="img-camera" class="img-camera" src="" alt="" title="" />
-					</div><!-- IMG Container -->
+					<div class="tool-bar-images hidden">
+						<a id="d-fondo" class="button tool" href="#">Fondo</a><!-- Add/Remove Back Img -->
+						<a id="d-foto" class="button tool" href="#">Foto</a><!-- Add/Remove Photo Img -->
+						<a id="d-marco" class="button tool" href="#">Marco</a><!-- Add/Remove Frame Img -->
+					</div><!-- Tool bar -->
+
+					<div class="img-preview-container">
+						<img id="img-back" class="img-back " src="/recursos/images/backs/back-cathedral.jpg" alt="" title="" /><!-- Back IMG -->
+						<div id="img-container" class="img-container ">
+							<img id="img-camera" class="img-camera" src="" alt="" title="" /><!-- Custom IMG -->
+						</div><!-- Custom IMG Container -->
+						<img id="img-frame" class="img-frame " src="/recursos/images/frames/frame-blue.png" alt="" title="" /><!-- Frame IMG -->
+					</div><!-- Preview IMG Container -->
 
 					<div id="canvas-container" class="canvas-container hidden">
+						<canvas id="canvas-back" class="canvas-back" width="600" height="450"></canvas>
 						<canvas id="canvas-camera" class="canvas-camera" width="600" height="450"></canvas>
+						<canvas id="canvas-frame" class="canvas-frame" width="600" height="450"></canvas>
 					</div><!-- CANVAS Container -->
 
 					<div class="clearfix"></div><!-- Clearfix -->
 
-					<a class="button hidden">Generar Imagen</a>
+					<a class="button terminar hidden">Terminar</a>
 
 				</div><!-- Col -->
 

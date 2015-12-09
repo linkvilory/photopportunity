@@ -1,4 +1,25 @@
 /*
+ ====
+ Global elements
+ ====
+*/
+body{
+  width: 100%;
+  height: 100vh;
+}
+
+/*
+ ====
+ App
+ ====
+*/
+.app {
+  margin: auto;
+  max-width: 600px;
+  width: 100%;
+}
+
+/*
 ====
 Button
 ====
@@ -29,6 +50,12 @@ Button
     border: 2px solid #fff;
     background: #444;
   }
+}
+.button.tool {
+    display: inline-block;
+    font-size: 0.8em;
+    max-width: 100px;
+    text-transform: uppercase;
 }
 
 /*
@@ -101,16 +128,28 @@ nav {
     }
   }
 }
-
 /*
  ====
- Menu Backs
+ Inner Menu
  ====
 */
-.backs {
+.inner-menu-collapsed{
   background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0;
+  width: 100%;
   height: 100vh;
-  right: 0;
+  position: fixed;
+  z-index: 999;
+  cursor: pointer;
+}
+/*
+ ====
+ Menu Backs, Frames
+ ====
+*/
+.backs, .frames {
+  background: rgba(155, 105, 105, 0.4) none repeat scroll 0 0;
+  height: 100vh;
+  right: -40%;
   position: fixed;
   top: 0;
   z-index: 99;
@@ -125,12 +164,12 @@ nav {
       font-size: 40px;
     }
   }
-  .backs-scroll {
+  .backs-scroll, .frames-scroll {
     display: block;
     height: calc(100% - 120px);
     overflow-y: scroll;
     width: 100%;
-    .back {
+    .back, .frame {
       display: table;
       margin: 0 0 20px;
       width: 100%;
@@ -146,17 +185,44 @@ nav {
 
 /*
  ====
+ Toolbar
+ ====
+*/
+.tool-bar-images {
+  margin: auto;
+  max-width: 600px;
+  width: 100%;
+}
+
+/*
+ ====
  Containers
  ====
 */
 
 /* === IMG Container === */
-.img-container {
+.img-preview-container {
+  display: table;
+  height: 100%;
+  margin: auto;
+  max-width: 600px;
+  position: relative;
+  width: 100%;
 
-  .img-container img {
+  .img-back, .img-frame {
     height: 100%;
+    left: 0;
+    max-height: 450px;
     max-width: 600px;
+    position: absolute;
+    top: 0;
     width: 100%;
+  }
+  .img-back{
+    z-index: -90;
+  }
+  .img-frame{
+    z-index: 90;
   }
 
 }

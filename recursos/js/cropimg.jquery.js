@@ -387,9 +387,11 @@
          */
         if(self.main.imageContainer.width() < self.main.options.resultWidth)
         {
+          //console.log("Setting height to pixels");
           self.main.imgCntData.proportionsToOriginal  = self.main.imageContainer.width() / self.main.options.resultWidth;
           self.main.imageContainer.css('height', (self.main.options.resultHeight * self.main.imgCntData.proportionsToOriginal)+'px');
-
+          $("#img-back").css('height', (self.main.options.resultHeight * self.main.imgCntData.proportionsToOriginal)+'px');
+          $("#img-frame").css('height', (self.main.options.resultHeight * self.main.imgCntData.proportionsToOriginal)+'px');
           // Uaktualniamy dane na temat kontenera obrazka
           self.main.imgCntData.width   = self.main.imageContainer.width();
           self.main.imgCntData.height  = self.main.imageContainer.height();
@@ -404,7 +406,10 @@
          */
         else
         {
+          //console.log("Setting default options");
           self.main.imageContainer.css('height', self.main.options.resultHeight);
+          $("#img-back").css('height', self.main.options.resultHeight);
+          $("#img-frame").css('height', self.main.options.resultHeight);
 
           // Uaktualniamy dane na temat kontenera obrazka
           self.main.imgCntData.width   = self.main.imageContainer.width();

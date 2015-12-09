@@ -1,7 +1,10 @@
 .ci-main {
-  position:relative;
-  max-width:100%;
-  margin:0 auto;
+  height: 100%;
+  margin: 0;
+  max-height: 450px !important;
+  max-width: 600px !important;
+  position: relative;
+  width: 100%;
 }
 .ci-main .ci-image-wrapper {
   background: transparent none repeat scroll 0 0;
