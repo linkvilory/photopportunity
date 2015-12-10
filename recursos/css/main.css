@@ -38,17 +38,25 @@ Button
   transition: 0.25s all ease-in-out;
   padding: 15px 0;
   cursor: pointer; }
-  .button:hover, .button:active, .button:focus, .button.active {
+  .button:hover, .button.active {
     text-decoration: none;
     color: #fff;
     border: 2px solid #fff;
     background: #444; }
+  .button:active, .button:focus {
+    text-decoration: none;
+    color: #444; }
 
 .button.tool {
   display: inline-block;
   font-size: 0.8em;
   max-width: 100px;
   text-transform: uppercase; }
+  .button.tool:hover, .button.tool.active {
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid #fff;
+    background: #444; }
 
 /*
  ====
@@ -58,7 +66,9 @@ Button
 nav {
   height: 50px;
   margin: 0 0 10px;
-  width: 100%; }
+  position: fixed;
+  width: 100%;
+  z-index: 9; }
   nav span {
     display: inline-block;
     float: right;

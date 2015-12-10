@@ -75,6 +75,9 @@ var sendImageToServer = function(){
   var imgBack = document.getElementById("img-back");
   var imgCamera = document.getElementById("img-camera");
   var imgFrame = document.getElementById("img-frame");
+
+  var actualW = $("#img-frame").width();
+  var actualH = $("#img-frame").height();
   /*
    Obtener todos los parametros de la imagen para mandarla al canvas final */
 
@@ -106,9 +109,9 @@ var sendImageToServer = function(){
   if(str[7] == "" || str[7] == null){
     l = 0;
   }else{ l = str[7]; }
-	context.drawImage(imgBack, 0, 0, 600, 450);
+	context.drawImage(imgBack, 0, 0, actualW, actualH);
   context.drawImage(imgCamera, l, t, w, h);
-	context.drawImage(imgFrame, 0, 0, 600, 450);
+	context.drawImage(imgFrame, 0, 0, actualW, actualH);
 
 	var dataURL = canvasFinal.toDataURL();
 
@@ -142,12 +145,17 @@ $(document).ready(function(){
    ====
   */
   $("#d-fondo").on("click", function(){
+    $(this).toggleClass("active");
     $("#img-back").toggleClass("hidden");
   });
+  /*
+   * Se ha deshabilitado por razones de forzar al usuario a usar por default su imagen
   $("#d-foto").on("click", function(){
+    $(this).toggleClass("active");
     $("#img-container").toggleClass("hidden");
-  });
+  });*/
   $("#d-marco").on("click", function(){
+    $(this).toggleClass("active");
     $("#img-frame").toggleClass("hidden");
   });
 

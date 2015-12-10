@@ -390,8 +390,11 @@
           //console.log("Setting height to pixels");
           self.main.imgCntData.proportionsToOriginal  = self.main.imageContainer.width() / self.main.options.resultWidth;
           self.main.imageContainer.css('height', (self.main.options.resultHeight * self.main.imgCntData.proportionsToOriginal)+'px');
-          $("#img-back").css('height', (self.main.options.resultHeight * self.main.imgCntData.proportionsToOriginal)+'px');
-          $("#img-frame").css('height', (self.main.options.resultHeight * self.main.imgCntData.proportionsToOriginal)+'px');
+          $("#img-back").css({'height': (self.main.options.resultHeight * self.main.imgCntData.proportionsToOriginal)+'px', 'width': self.main.imageContainer.width()});
+          $("#img-frame").css({'height': (self.main.options.resultHeight * self.main.imgCntData.proportionsToOriginal)+'px', 'width': self.main.imageContainer.width()});
+          $("#canvas-preview").attr('width', self.main.imageContainer.width());
+          $("#canvas-preview").attr('height', (self.main.options.resultHeight * self.main.imgCntData.proportionsToOriginal)+'px');
+          
           // Uaktualniamy dane na temat kontenera obrazka
           self.main.imgCntData.width   = self.main.imageContainer.width();
           self.main.imgCntData.height  = self.main.imageContainer.height();
@@ -408,9 +411,10 @@
         {
           //console.log("Setting default options");
           self.main.imageContainer.css('height', self.main.options.resultHeight);
-          $("#img-back").css('height', self.main.options.resultHeight);
-          $("#img-frame").css('height', self.main.options.resultHeight);
-
+          $("#img-back").css({'height': self.main.options.resultHeight, 'width': self.main.options.resultWidth});
+          $("#img-frame").css({'height': self.main.options.resultHeight, 'width': self.main.options.resultWidth});
+          $("#canvas-preview").attr('width', self.main.options.resultWidth);
+          $("#canvas-preview").attr('height', self.main.options.resultHeight);
           // Uaktualniamy dane na temat kontenera obrazka
           self.main.imgCntData.width   = self.main.imageContainer.width();
           self.main.imgCntData.height  = self.main.options.resultHeight;
