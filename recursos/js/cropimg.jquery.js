@@ -392,9 +392,10 @@
           self.main.imageContainer.css('height', (self.main.options.resultHeight * self.main.imgCntData.proportionsToOriginal)+'px');
           $("#img-back").css({'height': (self.main.options.resultHeight * self.main.imgCntData.proportionsToOriginal)+'px', 'width': self.main.imageContainer.width()});
           $("#img-frame").css({'height': (self.main.options.resultHeight * self.main.imgCntData.proportionsToOriginal)+'px', 'width': self.main.imageContainer.width()});
-          $("#canvas-preview").attr('width', self.main.imageContainer.width());
-          $("#canvas-preview").attr('height', (self.main.options.resultHeight * self.main.imgCntData.proportionsToOriginal)+'px');
-          
+          $("#img-elements").css({'height': (self.main.options.resultHeight * self.main.imgCntData.proportionsToOriginal)+'px', 'width': self.main.imageContainer.width()});
+          //$("#canvas-preview").attr('width', self.main.imageContainer.width());
+          //$("#canvas-preview").attr('height', (self.main.options.resultHeight * self.main.imgCntData.proportionsToOriginal)+'px');
+
           // Uaktualniamy dane na temat kontenera obrazka
           self.main.imgCntData.width   = self.main.imageContainer.width();
           self.main.imgCntData.height  = self.main.imageContainer.height();
@@ -413,8 +414,9 @@
           self.main.imageContainer.css('height', self.main.options.resultHeight);
           $("#img-back").css({'height': self.main.options.resultHeight, 'width': self.main.options.resultWidth});
           $("#img-frame").css({'height': self.main.options.resultHeight, 'width': self.main.options.resultWidth});
-          $("#canvas-preview").attr('width', self.main.options.resultWidth);
-          $("#canvas-preview").attr('height', self.main.options.resultHeight);
+          $("#img-elements").css({'height': self.main.options.resultHeight, 'width': self.main.options.resultWidth});
+          //$("#canvas-preview").attr('width', self.main.options.resultWidth);
+          //$("#canvas-preview").attr('height', self.main.options.resultHeight);
           // Uaktualniamy dane na temat kontenera obrazka
           self.main.imgCntData.width   = self.main.imageContainer.width();
           self.main.imgCntData.height  = self.main.options.resultHeight;

@@ -76,9 +76,7 @@ Button
 nav {
   height: 50px;
   margin: 0 0 10px;
-  position: fixed;
   width: 100%;
-  z-index: 9;
   span {
     display: inline-block;
     float: right;
@@ -221,7 +219,7 @@ nav {
   position: relative;
   width: 100%;
 
-  .img-back, .img-frame {
+  .img-back, .img-frame, .img-elements {
     height: 100%;
     left: 0;
     max-height: 450px;
@@ -229,12 +227,16 @@ nav {
     position: absolute;
     top: 0;
     width: 100%;
+    overflow: hidden;
   }
   .img-back{
-    z-index: -90;
+    z-index: -30;
+  }
+  .img-elements{
+    z-index: 30;
   }
   .img-frame{
-    z-index: 90;
+    z-index: 60;
   }
 
 }

@@ -66,9 +66,7 @@ Button
 nav {
   height: 50px;
   margin: 0 0 10px;
-  position: fixed;
-  width: 100%;
-  z-index: 9; }
+  width: 100%; }
   nav span {
     display: inline-block;
     float: right;
@@ -191,17 +189,20 @@ nav {
   max-width: 600px;
   position: relative;
   width: 100%; }
-  .img-preview-container .img-back, .img-preview-container .img-frame {
+  .img-preview-container .img-back, .img-preview-container .img-frame, .img-preview-container .img-elements {
     height: 100%;
     left: 0;
     max-height: 450px;
     max-width: 600px;
     position: absolute;
     top: 0;
-    width: 100%; }
+    width: 100%;
+    overflow: hidden; }
   .img-preview-container .img-back {
-    z-index: -90; }
+    z-index: -30; }
+  .img-preview-container .img-elements {
+    z-index: 30; }
   .img-preview-container .img-frame {
-    z-index: 90; }
+    z-index: 60; }
 
 /*# sourceMappingURL=main.css.map */

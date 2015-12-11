@@ -84,10 +84,8 @@
 
 				<div class="col-md-10 col-md-offset-1">
 
-					<input id="pick" class="hidden" type="file" accept="image/*" name="pick" /><!-- Hidden input for file manipulation -->
 					<input id="camera" class="hidden" type="file" accept="image/*;capture=camera" name="camera" /><!-- Hidden input for file manipulation -->
 
-					<a class="button pick">Tomar foto</a><!-- Select Photo -->
 					<a class="button camera">Escoger foto</a><!-- Capture Photo -->
 
 					<div class="clearfix"></div><!-- Clearfix -->
@@ -95,14 +93,20 @@
 					<div class="tool-bar-images hidden">
 						<a id="d-fondo" class="button tool" href="#">Fondo</a><!-- Add/Remove Back Img -->
 						<!--<a id="d-foto" class="button tool" href="#">Foto</a>--><!-- Add/Remove Photo Img -->
+						<a id="d-elementos" class="button tool" href="#">Elementos</a><!-- Add/Remove Elements Img -->
 						<a id="d-marco" class="button tool" href="#">Marco</a><!-- Add/Remove Frame Img -->
+
 					</div><!-- Tool bar -->
 
 					<div class="img-preview-container">
 						<img id="img-back" class="img-back " src="/recursos/images/backs/back-cathedral.jpg" alt="" title="" /><!-- Back IMG -->
 						<div id="img-container" class="img-container ">
-							<img id="img-camera" class="img-camera" src="" alt="" title="" /><!-- Custom IMG -->
+							<img id="img-camera" class="img-camera ui-widget-content" src="" alt="" title="" /><!-- Custom IMG -->
 						</div><!-- Custom IMG Container -->
+						<div id="img-elements" class="img-elements">
+							<!-- Número max. de elementos 5 -->
+							<img class="img-element ui-widget-content" src="/recursos/images/bubbles/bubble-circle-left.png" alt="" title="" /><!-- Custom IMG -->
+						</div><!-- Custom Elements Container -->
 						<img id="img-frame" class="img-frame " src="/recursos/images/frames/frame-blue.png" alt="" title="" /><!-- Frame IMG -->
 					</div><!-- Preview IMG Container -->
 
@@ -130,6 +134,8 @@
 
 	<!-- Javascript Init -->
 	<script type="text/javascript" src="/recursos/js/jquery-1.11.2.js"></script>
+	<script type="text/javascript" src="/recursos/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="/recursos/js/jquery.ui.touch-punch.min.js"></script>
 	<script type="text/javascript" src="/recursos/js/bootstrap.js"></script>
 	<script type="text/javascript" src="/recursos/js/cropimg.jquery.js"></script>
 	<script type="text/javascript" src="/recursos/js/main.js"></script>
