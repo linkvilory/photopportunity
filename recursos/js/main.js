@@ -63,7 +63,11 @@ var setManipulation = function(){
     }
   });
   $("#img-camera").draggable();
-  $(".img-element").draggable();
+  $(".img-element").resizable({
+    "aspectRatio": true
+  });
+  $("#img-elements .ui-wrapper .ui-resizable-handle.ui-resizable-se.ui-icon.ui-icon-gripsmall-diagonal-se").html('<i class="fa fa-arrows-alt"></i>');
+  $("#img-elements .ui-wrapper").draggable();
   $("nav").removeClass("hidden");
   $(".tool-bar-images").removeClass("hidden");
 };
@@ -316,5 +320,12 @@ $(document).ready(function(){
     var src = $(this).attr("src");
     $("#img-frame").attr("src", src);
   });
+
+  /*
+   ====
+   Función para hacer resize en todos y cada uno de los elementos adicionales en la foto
+   ====
+  */
+
 
 });

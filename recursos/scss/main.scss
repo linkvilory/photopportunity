@@ -240,3 +240,33 @@ nav {
   }
 
 }
+
+/*
+ ====
+ Resize elements
+ ====
+*/
+#img-elements{
+
+  .ui-wrapper{
+    cursor: move;
+  }
+  .ui-resizable-handle.ui-resizable-se.ui-icon.ui-icon-gripsmall-diagonal-se{
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border-radius: 10px;
+    bottom: 0;
+    cursor: se-resize;
+    height: 40px;
+    line-height: 40px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    width: 40px;
+    i{
+      color: #fff;
+      cursor: se-resize;
+      font-size: 40px;
+      line-height: 40px;
+    }
+  }
+}

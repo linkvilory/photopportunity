@@ -205,4 +205,28 @@ nav {
   .img-preview-container .img-frame {
     z-index: 60; }
 
+/*
+ ====
+ Resize elements
+ ====
+*/
+#img-elements .ui-wrapper {
+  cursor: move; }
+#img-elements .ui-resizable-handle.ui-resizable-se.ui-icon.ui-icon-gripsmall-diagonal-se {
+  background: transparent none repeat scroll 0 0;
+  border-radius: 10px;
+  bottom: 0;
+  cursor: se-resize;
+  height: 40px;
+  line-height: 40px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  width: 40px; }
+  #img-elements .ui-resizable-handle.ui-resizable-se.ui-icon.ui-icon-gripsmall-diagonal-se i {
+    color: #fff;
+    cursor: se-resize;
+    font-size: 40px;
+    line-height: 40px; }
+
 /*# sourceMappingURL=main.css.map */
